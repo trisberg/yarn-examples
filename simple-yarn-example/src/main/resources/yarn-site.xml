@@ -2,10 +2,14 @@
 <configuration>
     <property>
         <name>yarn.resourcemanager.hostname</name>
-        <value>localhost</value>
+        <value>sandbox</value>
     </property>
     <property>
         <name>yarn.resourcemanager.address</name>
-        <value>localhost:8032</value>
+        <value>sandbox:8050</value>
+    </property>
+    <property>
+        <name>yarn.application.classpath</name>
+        <value>/etc/hadoop/conf,/usr/lib/hadoop/*,/usr/lib/hadoop/lib/*,/usr/lib/hadoop-hdfs/*,/usr/lib/hadoop-hdfs/lib/*,/usr/lib/hadoop-yarn/*,/usr/lib/hadoop-yarn/lib/*,/usr/lib/hadoop-mapreduce/*,/usr/lib/hadoop-mapreduce/lib/*</value>
     </property>
 </configuration>
