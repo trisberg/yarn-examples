@@ -1,0 +1,27 @@
+spring:
+    hadoop:
+        fsUri: hdfs://sandbox:8020
+        resourceManagerHost: sandbox
+        resourceManagerPort: 8050
+    yarn:
+        appName: yarn-demo
+        applicationDir: /apps/yarn-demo/
+        client:
+            startup:
+                action: submit
+            localizer:
+                patterns:
+                  - "*demo*jar"
+            files:
+              - "file:target/yarn-demo-0.1.0.jar"
+            launchcontext:
+                archiveFile: yarn-demo-0.1.0.jar
+        appmaster:
+            localizer:
+                patterns:
+                  - "*demo*jar"
+            containerCount: 1
+            launchcontext:
+                archiveFile: yarn-demo-0.1.0.jar
+                arguments:
+                    --spring.profiles.active: container
