@@ -6,6 +6,7 @@ spring:
     yarn:
         appName: yarn-demo
         applicationDir: /apps/yarn-demo/
+        siteYarnAppClasspath: "/etc/hadoop/conf,/usr/lib/hadoop/*,/usr/lib/hadoop/lib/*,/usr/lib/hadoop-hdfs/*,/usr/lib/hadoop-hdfs/lib/*,/usr/lib/hadoop-yarn/*,/usr/lib/hadoop-yarn/lib/*,/usr/lib/hadoop-mapreduce/*,/usr/lib/hadoop-mapreduce/lib/*"
         client:
             startup:
                 action: submit
@@ -22,6 +23,7 @@ spring:
                   - "*demo*jar"
             containerCount: 1
             launchcontext:
+                useYarnAppClasspath: true
                 archiveFile: yarn-demo-0.1.0.jar
                 arguments:
                     --spring.profiles.active: container

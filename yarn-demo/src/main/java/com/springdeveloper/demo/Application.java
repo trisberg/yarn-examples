@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 import org.springframework.yarn.annotation.OnContainerStart;
 import org.springframework.yarn.annotation.YarnComponent;
+import org.springframework.yarn.config.annotation.configuration.SpringYarnContainerConfiguration;
 
 @ComponentScan
 @EnableAutoConfiguration
@@ -17,6 +18,8 @@ public class Application {
 
     public static void main(String[] args) {
         System.out.println("*** RUNNING");
+        SpringYarnContainerConfiguration c = new SpringYarnContainerConfiguration();
+
         SpringApplication.run(Application.class, args);
     }
 
@@ -25,9 +28,6 @@ public class Application {
     public static class HelloPojo {
 
         private static final Log log = LogFactory.getLog(HelloPojo.class);
-
-        @Autowired
-        private Configuration configuration;
 
         @OnContainerStart
         public void onStart() throws Exception {
