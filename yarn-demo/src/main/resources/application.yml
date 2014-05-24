@@ -16,6 +16,7 @@ spring:
             files:
               - "file:target/yarn-demo-0.1.0.jar"
             launchcontext:
+                useYarnAppClasspath: true
                 archiveFile: yarn-demo-0.1.0.jar
         appmaster:
             localizer:

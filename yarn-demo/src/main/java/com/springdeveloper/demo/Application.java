@@ -15,6 +15,7 @@ public class Application {
 
     public static void main(String[] args) {
         System.out.println("*** RUNNING");
+        System.out.println("*** CLASSPATH=" + System.getenv("CLASSPATH"));
         SpringApplication.run(Application.class, args);
     }
 
@@ -28,7 +29,6 @@ public class Application {
         public void onStart() throws Exception {
             log.info("Hello from YARN!");
         }
-
     }
 
 }
